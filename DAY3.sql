@@ -48,14 +48,14 @@ CONSTRAINT dt CHECK(Dely_date >= Order_date)
 );
 
 CREATE TABLE sales_order_details_SS66(
-Order_no VARCHAR2(6),
-Product_no VARCHAR2(6),
-Qty_ordered NUMBER(8),
-Qty_Disp NUMBER(8),
-Product_rate NUMBER(10,2),
-PRIMARY KEY (Order_no, Product_no),
-FOREIGN KEY Order_no REFERENCES sales_order_SS66(Order_no),
-FOREIGN KEY Product_no REFERENCES product_master_SS66(Product_no)
+    Order_no VARCHAR2(6),
+    Product_no VARCHAR2(6),
+    Qty_ordered NUMBER(8),
+    Qty_Disp NUMBER(8),
+    Product_rate NUMBER(10,2),
+    PRIMARY KEY (Order_no, Product_no),
+    FOREIGN KEY (Order_no) REFERENCES sales_order_SS66(Order_no),
+    FOREIGN KEY (Product_no) REFERENCES product_master_SS66(Product_no)
 );
 
 INSERT INTO Client_master_SS66 (Client_no, Name, City, Pincode, State, Bal_due) VALUES
