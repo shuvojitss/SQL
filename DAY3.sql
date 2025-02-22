@@ -70,12 +70,13 @@ INSERT INTO Product_master_SS66 (Product_no, Description, Profit_percent, Unit_m
 ('P00001', 'T-Shirts', 5, 'Piece', 200, 50, 350, 250),
 ('P0345', 'Shirts', 6, 'Piece', 150, 50, 500, 350),
 ('P06734', 'Cotton Jeans', 5, 'Piece', 100, 20, 600, 450),
-('P07865', 'Jeans', 5, 'Piece', 200, 50, 750, 500),
-('P07865', 'Trousers', 2, 'Piece', 150, 50, 850, 550),
-('P07885', 'PulM-Overs', 2.5, 'Piece', 150, 40, 700, 450),
-('P07965', 'Denim Shirts', 4, 'Piece', 120, 40, 350, 250),
+('P07865', 'Jeans', 5, 'Piece', 100, 20, 750, 500),
+('P07868', 'Trousers', 2, 'Piece', 150, 50, 850, 550),
+('P07885', 'PuM-Overs', 2.5, 'Piece', 80, 30, 700, 450),
+('P07965', 'Denim Shirts', 4, 'Piece', 100, 40, 350, 250),
 ('P07975', 'Lyers Tops', 5, 'Piece', 70, 30, 300, 175),
-('P08665', 'Skirts', 5, 'Piece', 75, 30, 450, 300);
+('P08865', 'Skirts', 5, 'Piece', 75, 30, 450, 300);
+
 
 
 INSERT INTO Salesman_master_SS66 (Salesman_no, Salesman_name, Address1, Address2, City, Pincode, State, Sal_amt, Tgt_to_get, Ydt_sales, Remarks) VALUES
