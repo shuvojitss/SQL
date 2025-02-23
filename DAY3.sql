@@ -85,7 +85,7 @@ INSERT INTO Salesman_master_SS66 (Salesman_no, Salesman_name, Address1, Address2
 ('S00003', 'Raj', 'P-7', 'Bandra', 'Mumbai', 400032, 'Maharashtra', 3000, 200, 100, 'Good'),
 ('S00004', 'Ashish', 'A/5', 'Juhu', 'Mumbai', 400044, 'Maharashtra', 3500, 200, 150, 'Good');
 
-INSERT INTO Sales_order_SS66 (Order_no, Client_no, Dely_date, Salesman_no, Dely_type, Billed_yn, Order_date, Order_status) VALUES
+INSERT INTO Sales_order_SS66 (Order_no, Client_no, Order_date, Salesman_no, Dely_type, Dely_date, Billed_yn, , Order_status) VALUES
 ('O19001', 'C00001', '20-Jul-02', 'S00001', 'F', 'N', '12-Jun-04', 'in process'),
 ('O19002', 'C00002', '27-Jun-02', 'S00002', 'P', 'N', '25-Jun-04', 'cancelled'),
 ('O46865', 'C00003', '20-Feb-02', 'S00003', 'F', 'Y', '18-Feb-04', 'fulfilled'),
