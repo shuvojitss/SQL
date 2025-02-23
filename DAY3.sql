@@ -86,26 +86,30 @@ INSERT INTO Salesman_master_SS66 (Salesman_no, Salesman_name, Address1, Address2
 ('S00004', 'Ashish', 'A/5', 'Juhu', 'Mumbai', 400044, 'Maharashtra', 3500, 200, 150, 'Good');
 
 INSERT INTO Sales_order_SS66 (Order_no, Client_no, Dely_date, Salesman_no, Dely_type, Billed_yn, Order_date, Order_status) VALUES
-('O19001', 'C00001', TO_DATE('20-July-02', 'DD-MON-YY'), 'S00001', 'F', 'N', TO_DATE('12-June-04', 'DD-MON-YY'), 'In Process'),
-('O19002', 'C00002', TO_DATE('27-June-02', 'DD-MON-YY'), 'S00002', 'P', 'N', TO_DATE('25-June-04', 'DD-MON-YY'), 'Cancelled'),
-('O46865', 'C00003', TO_DATE('20-Feb-02', 'DD-MON-YY'), 'S00003', 'F', 'Y', TO_DATE('18-Feb-04', 'DD-MON-YY'), 'Fulfilled'),
-('O19003', 'C00001', TO_DATE('07-Apr-02', 'DD-MON-YY'), 'S00001', 'F', 'Y', TO_DATE('03-Apr-04', 'DD-MON-YY'), 'Fulfilled'),
-('O19006', 'C00002', TO_DATE('22-May-02', 'DD-MON-YY'), 'S00002', 'F', 'N', TO_DATE('20-May-04', 'DD-MON-YY'), 'Cancelled'),
-('O19008', 'C00005', TO_DATE('26-July-02', 'DD-MON-YY'), 'S00004', 'F', 'N', TO_DATE('24-May-04', 'DD-MON-YY'), 'In Process');
+('O19001', 'C00001', '20-Jul-02', 'S00001', 'F', 'N', '12-Jun-04', 'in process'),
+('O19002', 'C00002', '27-Jun-02', 'S00002', 'P', 'N', '25-Jun-04', 'cancelled'),
+('O46865', 'C00003', '20-Feb-02', 'S00003', 'F', 'Y', '18-Feb-04', 'fulfilled'),
+('O19003', 'C00001', '07-Apr-02', 'S00001', 'F', 'Y', '03-Apr-04', 'fulfilled'),
+('O46866', 'C00004', '22-May-02', 'S00002', 'P', 'N', '20-May-04', 'cancelled'),
+('O19008', 'C00005', '26-Jul-02', 'S00004', 'F', 'N', '24-May-04', 'in process');
 
-INSERT INTO Sales_order_details_SS66 (Order_no, Product_no, Qty_ordered, Qty_disp, Product_rate) VALUES
-('O19001', 'P00001', 4, 4, 525),
-('O19001', 'P07965', 2, 1, 8400),
-('O19001', 'P07885', 2, 1, 5250),
-('O19001', 'P07885', 10, 3, 525),
-('O46865', 'P07868', 3, 3, 3150),
-('O46865', 'P07885', 1, 1, 5250),
-('O46865', 'P00001', 10, 4, 1050),
-('O46865', 'P0345', 4, 4, 12000),
-('O19003', 'P06734', 2, 1, 8400),
-('O19006', 'P07965', 1, 1, 525),
-('O19008', 'P00001', 10, 3, 1050),
-('O19008', 'P07975', 5, 3, 1050);
+INSERT INTO Sales_Order_Details (OrderNo, ProductNo, QtyOrdered, QtyDisp, ProductRate) 
+VALUES 
+  ('O19001', 'P00001', 4, 4, 525),
+  ('O19001', 'P07965', 2, 1, 8400),
+  ('O19001', 'P07885', 2, 1, 5250),
+  ('O19002', 'P00001', 10, 0, 525),
+  ('O46865', 'P07868', 3, 3, 3150),
+  ('O46865', 'P07885', 3, 1, 5250),
+  ('O46865', 'P00001', 10, 10, 525),
+  ('O46865', 'P0345', 4, 4, 1050),
+  ('O19003', 'P03453', 2, 2, 1050),
+  ('O19003', 'P06734', 1, 1, 12000),
+  ('O46866', 'P07965', 1, 0, 8400),
+  ('O46866', 'P07975', 1, 0, 1050),
+  ('O19008', 'P00001', 10, 5, 525),
+  ('O19008', 'P07975', 5, 3, 1050);
+
 
 
 
