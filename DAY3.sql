@@ -111,7 +111,22 @@ VALUES
   ('O19008', 'P07975', 5, 3, 1050);
 
 
-
+SELECT Name FROM Client_master_SS66 WHERE Name LIKE '_a%';
+SELECT * FROM Client_master_SS66 WHERE City LIKE '_a%';
+SELECT * FROM Client_master_SS66 WHERE City IN ('Bombay', 'Delhi');
+SELECT * FROM Client_master_SS66 WHERE Bal_due > 10000;
+SELECT * FROM Sales_order_SS66 WHERE TO_CHAR(Order_date, 'MM') = '01';
+SELECT * FROM Sales_order_SS66 WHERE Client_no IN ('C00001', 'C00002');
+SELECT * FROM Product_master_SS66 WHERE Sell_price > 2000 AND Sell_price <= 5000;
+SELECT Product_no, Description, Sell_price, Sell_price * 1.5 AS new_price FROM Product_master_SS66 WHERE Sell_price > 1500;
+SELECT Name, City, State FROM Client_master_SS66 WHERE State != 'Maharashtra';
+SELECT COUNT(*) AS total_orders FROM Sales_order_SS66;
+SELECT COUNT(*) AS total_orders FROM Sales_order_SS66;
+SELECT AVG(Sell_price) AS average_price FROM Product_master_SS66;
+SELECT MAX(Sell_price) AS max_price, MIN(Sell_price) AS min_price FROM Product_master_SS66;
+SELECT COUNT(*) AS products_count FROM Product_master_SS66 WHERE Sell_price >= 1500;
+SELECT * FROM Product_master_SS66 WHERE Qty_on_hand < Reorder_lvl;
+SELECT Order_no, TO_CHAR(Order_date, 'Day') AS order_day FROM Sales_order_SS66;
 
 
 
