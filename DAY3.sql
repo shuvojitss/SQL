@@ -93,7 +93,7 @@ INSERT INTO Sales_order_SS66 (Order_no, Client_no, Dely_date, Salesman_no, Dely_
 ('O46866', 'C00004', '22-May-02', 'S00002', 'P', 'N', '20-May-04', 'cancelled'),
 ('O19008', 'C00005', '26-Jul-02', 'S00004', 'F', 'N', '24-May-04', 'in process');
 
-INSERT INTO Sales_Order_Details (OrderNo, ProductNo, QtyOrdered, QtyDisp, ProductRate) 
+INSERT INTO Sales_Order_Details_SS66 (Order_no, Product_no, Qty_ordered, Qty_Disp, Product_rate) 
 VALUES 
   ('O19001', 'P00001', 4, 4, 525),
   ('O19001', 'P07965', 2, 1, 8400),
@@ -103,12 +103,13 @@ VALUES
   ('O46865', 'P07885', 3, 1, 5250),
   ('O46865', 'P00001', 10, 10, 525),
   ('O46865', 'P0345', 4, 4, 1050),
-  ('O19003', 'P03453', 2, 2, 1050),
+  ('O19003', 'P0345', 2, 2, 1050),
   ('O19003', 'P06734', 1, 1, 12000),
   ('O46866', 'P07965', 1, 0, 8400),
   ('O46866', 'P07975', 1, 0, 1050),
   ('O19008', 'P00001', 10, 5, 525),
   ('O19008', 'P07975', 5, 3, 1050);
+
 
 
 
