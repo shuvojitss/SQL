@@ -60,4 +60,17 @@ SQL> ALTER TABLE EMP_SS66
   2  MODIFY ENAME VARCHAR(10);
 
 Table altered.
-         
+
+         SQL> ALTER TABLE DEPT_SS66 RENAME COLUMN DNAME TO DEPT_NAME;
+
+Table altered.
+
+SQL> SELECT * FROM DEPT_SS66;
+
+    DEPTNO DEPT_NAME            LOC
+---------- -------------------- --------------------
+        10 Accounting           New York
+        20 Research             Dallas
+        30 Sales                Chicago
+        40 Operations           Boston
+
