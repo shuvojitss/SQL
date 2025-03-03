@@ -125,3 +125,13 @@ INSERT INTO Student_SS66 VALUES (23, 'David', 'Kolkata');
 INSERT INTO Student_SS66 VALUES (24, 'Eve', 'Kolkata');
 INSERT INTO Student_SS66 VALUES (25, 'Frank', 'Kolkata');
 INSERT INTO Student_SS66 VALUES (26, 'Grace', 'Mumbai');
+
+SELECT T.Name
+FROM Teacher_SS66 T
+INNER JOIN TaughtBy_SS66 TB ON T.Tid = TB.Tid
+INNER JOIN Subject_SS66 S ON TB.Subno = S.Subno
+WHERE T.Dept = 'Physics' AND S.Subtitle = 'Thermodynamics';
+
+UPDATE Subject_SS66
+SET Subtitle = 'RDBMS'
+WHERE Subtitle = 'DBMS';
