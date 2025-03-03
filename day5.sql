@@ -69,49 +69,59 @@ WHERE s_id IN (SELECT s_id FROM SAILORS_SS66 WHERE age > 60);
 DELETE FROM SAILORS_SS66
 WHERE age > 60;
 /*---------------------------------------------------------------------------------------------------------------------------*/
-
-
-
-CREATE TABLE TEACHER (
+CREATE TABLE Teacher_SS66 (
     Tid NUMBER(5) PRIMARY KEY,
-    Name VARCHAR2(50),
-    Dept VARCHAR2(50)
+    Name VARCHAR(50),
+    Dept VARCHAR(50)
 );
 
-CREATE TABLE SUBJECT (
+CREATE TABLE Subject_SS66 (
     Subno NUMBER(5) PRIMARY KEY,
-    Subtitle VARCHAR2(50)
+    Subtitle VARCHAR(50)
 );
 
-CREATE TABLE TAUGHTBY (
+CREATE TABLE TaughtBy_SS66 (
     Tid NUMBER(5),
     Subno NUMBER(5),
-    FOREIGN KEY (Tid) REFERENCES TEACHER(Tid),
-    FOREIGN KEY (Subno) REFERENCES SUBJECT(Subno)
+    PRIMARY KEY (Tid, Subno),
+    FOREIGN KEY (Tid) REFERENCES Teacher_SS66(Tid),
+    FOREIGN KEY (Subno) REFERENCES Subject_SS66(Subno)
 );
 
-CREATE TABLE STUDENT (
+CREATE TABLE Student_SS66 (
     Rollno NUMBER(5) PRIMARY KEY,
-    Sname VARCHAR2(50),
-    City VARCHAR2(50)
+    Sname VARCHAR(50),
+    City VARCHAR(50)
 );
 
+INSERT INTO Teacher_SS66 VALUES (1, 'Dr. Nisha', 'Physics');
+INSERT INTO Teacher_SS66 VALUES (2, 'Dr. Sharma', 'Computer_Science');
+INSERT INTO Teacher_SS66 VALUES (3, 'Dr. Gupta', 'Chemistry');
+INSERT INTO Teacher_SS66 VALUES (4, 'Dr. Bose', 'Physics');
+INSERT INTO Teacher_SS66 VALUES (5, 'Dr. Rao', 'Computer_Science');
+INSERT INTO Teacher_SS66 VALUES (6, 'Dr. Mishra', 'Physics');
+INSERT INTO Teacher_SS66 VALUES (7, 'Dr. Sen', 'Physics');
 
-INSERT INTO TEACHER VALUES (30001, 'Dr. Nisha', 'Physics');
-INSERT INTO TEACHER VALUES (30002, 'Dr. Sharma', 'Mathematics');
-INSERT INTO TEACHER VALUES (30003, 'Dr. Patel', 'Physics');
+INSERT INTO Subject_SS66 VALUES (101, 'Thermodynamics');
+INSERT INTO Subject_SS66 VALUES (102, 'DBMS');
+INSERT INTO Subject_SS66 VALUES (103, 'Organic Chemistry');
+INSERT INTO Subject_SS66 VALUES (104, 'Genetics');
+INSERT INTO Subject_SS66 VALUES (105, 'Quantum Physics');
+INSERT INTO Subject_SS66 VALUES (106, 'Linear Algebra');
+INSERT INTO Subject_SS66 VALUES (107, 'Electromagnetism');
 
-INSERT INTO SUBJECT VALUES (40001, 'Thermodynamics');
-INSERT INTO SUBJECT VALUES (40002, 'Quantum Mechanics');
-INSERT INTO SUBJECT VALUES (40003, 'Linear Algebra');
+INSERT INTO TaughtBy_SS66 VALUES (1, 101);
+INSERT INTO TaughtBy_SS66 VALUES (4, 101);
+INSERT INTO TaughtBy_SS66 VALUES (6, 101);
+INSERT INTO TaughtBy_SS66 VALUES (2, 102);
+INSERT INTO TaughtBy_SS66 VALUES (3, 103);
+INSERT INTO TaughtBy_SS66 VALUES (5, 102);
+INSERT INTO TaughtBy_SS66 VALUES (7, 107);
 
-INSERT INTO TAUGHTBY VALUES (30001, 40001);
-INSERT INTO TAUGHTBY VALUES (30003, 40001);
-INSERT INTO TAUGHTBY VALUES (30001, 40002);
-INSERT INTO TAUGHTBY VALUES (30002, 40003);
-
-INSERT INTO STUDENT VALUES (50020, 'Rohan', 'Kolkata');
-INSERT INTO STUDENT VALUES (50022, 'Aryan', 'Kolkata');
-INSERT INTO STUDENT VALUES (50024, 'Ananya', 'Mumbai');
-INSERT INTO STUDENT VALUES (50025, 'Meera', 'Kolkata');
-INSERT INTO STUDENT VALUES (50030, 'Raj', 'Delhi');
+INSERT INTO Student_SS66 VALUES (20, 'Alice', 'Kolkata');
+INSERT INTO Student_SS66 VALUES (21, 'Bob', 'Kolkata');
+INSERT INTO Student_SS66 VALUES (22, 'Charlie', 'Kolkata');
+INSERT INTO Student_SS66 VALUES (23, 'David', 'Kolkata');
+INSERT INTO Student_SS66 VALUES (24, 'Eve', 'Kolkata');
+INSERT INTO Student_SS66 VALUES (25, 'Frank', 'Kolkata');
+INSERT INTO Student_SS66 VALUES (26, 'Grace', 'Mumbai');
