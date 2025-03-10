@@ -168,3 +168,7 @@ Subno  Subtitle
 406    Statistics 
 */
 
+SELECT * FROM Students WHERE City='Kolkata' AND Rollno BETWEEN 20 AND 25;
+SELECT * FROM Students WHERE City ='Kolkata' ORDER BY Rollno DESC;
+
+
