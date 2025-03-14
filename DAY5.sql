@@ -44,6 +44,44 @@ INSERT INTO RESERVES VALUES (103, 204, 'Sunday');
 INSERT INTO RESERVES VALUES (105, 205, 'Wednesday');
 INSERT INTO RESERVES VALUES (106, 206, 'Friday');
 
+SELECT * FROM SAILORS;
+
+/*s_id  s_name  rating  age
+----  ------  ------  ---
+101   Tarun   5       25 
+102   Rahul   4       30 
+103   Amit    3       65
+104   Pooja   2       28 
+105   Rohit   4       55 
+106   Neha    3       40 
+*/
+
+SELECT * FROM BOATS;
+
+/*
+b_id  b_name         color 
+----  -------------  ------
+201   Speedster      red   
+202   Wave Rider     green 
+203   Blue Whale     blue  
+204   Ocean King     red   
+205   Sea Breeze     green 
+206   Storm Breaker  yellow
+*/
+
+SELECT * FROM RESERVES;
+
+/* 
+s_id  b_id  day      
+----  ----  ---------
+103   201   Monday   
+102   202   Monday   
+101   203   Tuesday  
+104   204   Sunday   
+105   205   Wednesday
+106   206   Friday 
+*/
+
 SELECT BOATS.color 
 FROM SAILORS 
 INNER JOIN RESERVES ON SAILORS.s_id = RESERVES.s_id 
