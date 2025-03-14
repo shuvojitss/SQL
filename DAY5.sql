@@ -268,6 +268,15 @@ Rollno  Sname  City
 25      Swati  Kolkata
 */
 SELECT * FROM Students WHERE City ='Kolkata' ORDER BY Rollno DESC;
+/*
+Rollno  Sname  City   
+------  -----  -------
+26      Vikas  Kolkata
+25      Swati  Kolkata
+23      Neha   Kolkata
+22      Ankit  Kolkata
+*/
+
 
 
 
