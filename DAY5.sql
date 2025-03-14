@@ -170,12 +170,12 @@ INSERT INTO TAUGHTBY VALUES (303, 403);
 INSERT INTO TAUGHTBY VALUES (306, 406);
 
 -- STUDENT table
-INSERT INTO STUDENT VALUES (501, 'Ankit', 'Kolkata');
-INSERT INTO STUDENT VALUES (502, 'Neha', 'Kolkata');
-INSERT INTO STUDENT VALUES (503, 'Ravi', 'Mumbai');
-INSERT INTO STUDENT VALUES (504, 'Swati', 'Kolkata');
-INSERT INTO STUDENT VALUES (505, 'Vikas', 'Kolkata');
-INSERT INTO STUDENT VALUES (506, 'Priya', 'Delhi');
+INSERT INTO STUDENT VALUES (22, 'Ankit', 'Kolkata');
+INSERT INTO STUDENT VALUES (23, 'Neha', 'Kolkata');
+INSERT INTO STUDENT VALUES (24, 'Ravi', 'Mumbai');
+INSERT INTO STUDENT VALUES (25, 'Swati', 'Kolkata');
+INSERT INTO STUDENT VALUES (26, 'Vikas', 'Kolkata');
+INSERT INTO STUDENT VALUES (27, 'Priya', 'Delhi');
 
 SELECT * FROM SUBJECT;
 
@@ -208,12 +208,12 @@ SELECT * FROM STUDENT;
 /*
 Rollno  Sname  City   
 ------  -----  -------
-501     Ankit  Kolkata
-502     Neha   Kolkata
-503     Ravi   Mumbai 
-504     Swati  Kolkata
-505     Vikas  Kolkata
-506     Priya  Delhi  
+22     Ankit  Kolkata
+23     Neha   Kolkata
+24     Ravi   Mumbai 
+25     Swati  Kolkata
+26     Vikas  Kolkata
+27     Priya  Delhi  
 */
 
 SELECT * FROM TEACHER;
