@@ -177,6 +177,58 @@ INSERT INTO STUDENT VALUES (504, 'Swati', 'Kolkata');
 INSERT INTO STUDENT VALUES (505, 'Vikas', 'Kolkata');
 INSERT INTO STUDENT VALUES (506, 'Priya', 'Delhi');
 
+SELECT * FROM SUBJECT;
+
+/*
+Subno  Subtitle        
+-----  ----------------
+401    Thermodynamics  
+402    RDBMS           
+403    Data Structures 
+404    Machine Learning
+405    Quantum Physics 
+406    Statistics   
+*/
+
+SELECT * FROM TAUGHTBY;
+
+/*
+Tid  Subno
+---  -----
+301  401  
+302  401  
+305  405  
+304  402  
+303  403  
+306  406  
+*/
+
+SELECT * FROM STUDENT;
+
+/*
+Rollno  Sname  City   
+------  -----  -------
+501     Ankit  Kolkata
+502     Neha   Kolkata
+503     Ravi   Mumbai 
+504     Swati  Kolkata
+505     Vikas  Kolkata
+506     Priya  Delhi  
+*/
+
+SELECT * FROM TEACHER;
+
+/*
+Tid  Name        Dept            
+---  ----------  ----------------
+301  Dr. Sharma  Physics         
+302  Dr. Verma   Physics         
+303  Dr. Singh   Mathematics     
+304  Dr. Patel   Computer Science
+305  Dr. Gupta   Physics         
+306  Dr. Mehta   Chemistry 
+*/
+
 SELECT TEACHER.Name 
 FROM TEACHER 
 INNER JOIN TAUGHTBY ON TEACHER.Tid = TAUGHTBY.Tid 
