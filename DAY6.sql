@@ -89,6 +89,73 @@ INSERT INTO ODETAILS_SS66 VALUES (403, 10604, 40);
 INSERT INTO ODETAILS_SS66 VALUES (404, 10605, 50);
 INSERT INTO ODETAILS_SS66 VALUES (405, 10606, 60);
 
+SELECT * FROM ZIPCODES_SS66;
+/*
+ZIP     CITY     
+------  ---------
+400001  Mumbai   
+560001  Bangalore
+110001  Delhi    
+600001  Chennai  
+700001  Kolkata  
+122001  Gurgaon  
+*/
+SELECT * FROM EMPLOYEES_SS66;
+/*
+ENO  ENAME    ZIP     HDATE      
+---  -------  ------  -----------
+101  Amit     400001  23-JUN-2015
+102  Ravi     560001  19-JUL-2016
+103  Sita     110001  15-FEB-2017
+104  John     600001  30-MAR-2018
+105  Mary     700001  10-MAY-2019
+106  Krishna  122001  01-AUG-2020
+*/
+SELECT * FROM CUSTOMERS_SS66;
+/*
+CNO  CNAME   STREET           ZIP     PHONE     
+---  ------  ---------------  ------  ----------
+301  Samir   MG Road          400001  9876543210
+302  Sneha   Brigade Road     560001  8765432109
+303  Vikas   Connaught Place  110001  7654321098
+304  Ramesh  T Nagar          600001  6543210987
+305  Pooja   Salt Lake        700001  5432109876
+306  Kiran   Cyber Hub        122001  4321098765
+*/
+SELECT * FROM PARTS_SS66; 
+/*
+PNO    PNAME    QOH  PRICE  LEVELNO
+-----  -------  ---  -----  -------
+10601  Bolt     500  5.5    100    
+10602  Nut      300  2.75   50     
+10603  Screw    700  9.2    150    
+10604  Washer   900  50     200    
+10605  Clamp    150  25000  80     
+10606  Bracket  200  30000  60 
+*/
+SELECT * FROM ORDERS_SS66;                                                                                     
+/*
+ONO  CNO  ENO  PRECEIVED    SHIPPED    
+---  ---  ---  -----------  -----------
+401  301  101  15-JAN-2024  20-JAN-2024
+402  302  102  10-FEB-2024             
+403  303  103  05-MAR-2024  08-MAR-2024
+404  304  104  12-APR-2024  18-APR-2024
+405  305  105  08-MAY-2024             
+406  306  106  02-JUN-2024  10-JUN-2024
+*/
+SELECT * FROM ODETAILS_SS66;                                                                                   
+/*
+ONO  PNO    QTY
+---  -----  ---
+401  10601  10 
+401  10602  20 
+402  10603  30 
+403  10604  40 
+404  10605  50 
+405  10606  60
+*/
+
 SELECT PNO, PNAME
 FROM PARTS_SS66
 WHERE PRICE < 20;
