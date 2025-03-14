@@ -259,6 +259,15 @@ Subno  Subtitle
 */
 
 SELECT * FROM Students WHERE City='Kolkata' AND Rollno BETWEEN 20 AND 25;
+/*
+Rollno  Sname  City   
+------  -----  -------
+22      Ankit  Kolkata
+23      Neha   Kolkata
+24      Ravi   Mumbai 
+25      Swati  Kolkata
+*/
 SELECT * FROM Students WHERE City ='Kolkata' ORDER BY Rollno DESC;
+
 
 
