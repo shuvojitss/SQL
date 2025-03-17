@@ -1,0 +1,157 @@
+SELECT ENAME
+FROM EMP_SS66
+WHERE SAL = (SELECT MAX(SAL) FROM EMP_SS66);
+/*
+ENAME
+----------
+King
+*/
+SELECT ENAME
+FROM EMP_SS66
+WHERE JOB = 'Salesman' AND SAL = (SELECT MAX(SAL) FROM EMP_SS66 WHERE JOB = 'Salesman');
+/*
+ENAME
+----------
+Allen
+*/
+SELECT ENAME
+FROM EMP_SS66
+WHERE JOB = 'Clerk' AND SAL = (SELECT MIN(SAL) FROM EMP_SS66 WHERE JOB = 'Clerk');
+/*
+ENAME
+----------
+Smith
+*/
+SELECT DNAME
+FROM DEPT_SS66
+WHERE DEPTNO = (
+    SELECT DEPTNO
+    FROM (
+        SELECT DEPTNO
+        FROM EMP_SS66
+        GROUP BY DEPTNO
+        ORDER BY AVG(SAL) DESC
+    ) 
+    WHERE ROWNUM = 1
+);
+/*
+DNAME
+--------------------
+Accounting
+*/
+SELECT ENAME
+FROM EMP_SS66
+WHERE SAL > (SELECT SAL FROM EMP_SS66 WHERE ENAME = 'Turner');
+/*
+ENAME
+----------
+Allen
+Jones
+Blake
+Clark
+Scott
+King
+Ford
+*/
+SELECT ENAME
+FROM EMP_SS66
+WHERE HIREDATE > (SELECT HIREDATE FROM EMP_SS66 WHERE ENAME = 'Allen');
+/*
+ENAME
+----------
+Ward
+Jones
+Martin
+Blake
+Clark
+Scott
+King
+Turner
+Adams
+James
+Ford
+Miller
+*/
+SELECT DNAME
+FROM DEPT_SS66 
+WHERE DEPTNO = (SELECT DEPTNO FROM EMP_SS66 WHERE ENAME = 'Ford');
+/*
+DNAME
+--------------------
+Research
+*/
+SELECT DNAME
+FROM DEPT_SS66
+WHERE DEPTNO = (SELECT DEPTNO FROM EMP_SS66 WHERE SAL = (SELECT MAX(SAL) FROM EMP_SS66));
+/*
+DNAME
+--------------------
+Accounting
+*/
+SELECT LOC
+FROM DEPT_SS66
+WHERE DEPTNO = (SELECT DEPTNO FROM EMP_SS66 WHERE ENAME = 'Smith');
+/*
+LOC
+--------------------
+Dallas
+*/
+SELECT LOC
+FROM DEPT_SS66
+WHERE DEPTNO IN (SELECT DEPTNO FROM EMP_SS66 WHERE JOB = 'Manager');
+/*
+LOC
+--------------------
+Dallas
+Chicago
+New York
+*/
+
+-- Assuming there is a separate table for grades, e.g., EMP_GRADES
+SELECT GRADE
+FROM EMP_GRADES
+WHERE EMPNO = (SELECT EMPNO FROM EMP_SS66 WHERE ENAME = 'Martin');
+/*
+
+*/
+SELECT ENAME
+FROM EMP_SS66
+WHERE SAL > ALL (SELECT SAL FROM EMP_SS66 WHERE DEPTNO = (SELECT DEPTNO FROM DEPT_SS66 WHERE DNAME = 'Research'));
+/*
+ENAME
+----------
+King
+*/
+SELECT DNAME
+FROM DEPT_SS66
+WHERE DEPTNO NOT IN (SELECT DEPTNO FROM EMP_SS66);
+/*
+DNAME
+--------------------
+Operations
+*/
+SELECT ENAME
+FROM EMP_SS66
+WHERE HIREDATE = (SELECT HIREDATE FROM EMP_SS66 WHERE ENAME = 'Adams');
+/*
+
+*/
+SELECT DNAME
+FROM DEPT_SS66
+WHERE DEPTNO IN (SELECT DISTINCT DEPTNO FROM EMP_SS66 WHERE COMM IS NOT NULL);
+/*
+DNAME
+--------------------
+Sales
+*/
+SELECT ENAME, DEPTNO
+FROM EMP_SS66 e
+WHERE SAL = (SELECT MIN(SAL) FROM EMP_SS66 WHERE DEPTNO = e.DEPTNO);
+/*
+ENAME          DEPTNO
+---------- ----------
+Smith              20
+James              30
+Miller             10
+*/
+
